@@ -1,3 +1,5 @@
+Web application for visiualize and search knowledge graph
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Generation
