@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Header } from './components/Header'
+import { Footer } from './components/Footer'
+import { ForceGraph } from './components/ForceGraph'
+import { useWindowScaleRatio } from './hooks'
+import data from './components/ForceGraph/mock.json'
+import './App.css'
 
 function App() {
+  const { scaleRatio } = useWindowScaleRatio()
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <section className="Main">
+        <ForceGraph
+          nodesData={data.nodes}
+          linksData={data.links}
+          scaleRatio={scaleRatio}
+        />
+      </section>
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
